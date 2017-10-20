@@ -37,6 +37,14 @@ export default class Ball {
 
   update() {
     this.position = Vector.add(this.position, this.velocity);
+	if(this.position.x+15 >= 760 || this.position.x-15 <= 0)
+	{
+		this.velocity.x *= -1;
+	}
+	if(this.position.y+15 >= 480 || this.position.y-15 <= 0)
+	{
+		this.velocity.y *= -1;
+	}
   }
 
   render(ctx) {

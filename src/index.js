@@ -8,8 +8,8 @@ document.body.appendChild(canvas);
 
 var balls = []
 balls[15] = new Ball(15, {x: 732, y: 266});
-balls[0] =  new Ball(1,  {x: 266, y: 266});
-balls[1] =  new Ball(2,  {x: 240, y: 250});
+balls[0] =  new Ball(0,  {x: 266, y: 266});
+balls[1] =  new Ball(1,  {x: 240, y: 250});
 balls[8] =  new Ball(8,  {x: 240, y: 281});
 balls[9] =  new Ball(9,  {x: 212, y: 236});
 balls[7] =  new Ball(7,  {x: 212, y: 266});
@@ -37,6 +37,7 @@ function update() {
       if(900 > Math.pow(a.x-b.x, 2) + Math.pow(a.y-b.y, 2)) {
         balls[i].setColor('red');
         balls[j].setColor('red');
+		//handle collision
       } else {
         balls[i].setColor('gray');
         balls[j].setColor('red');
@@ -59,4 +60,4 @@ function loop() {
 
 setInterval(loop, 1/30000);
 
-balls[15].setVelocity({x: -0.1, y:0})
+balls[15].setVelocity({x: -1, y:0})
